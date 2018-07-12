@@ -1,0 +1,23 @@
+<section>
+  <table class="table">
+    <tbody>
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>Driver Phone</th>
+          <th>Passanger Phone</th>
+          <th>Rating</th>
+          <th rowspan="2">Actions</th>
+        </tr>
+      </thead>
+      <tr *ngFor="let order of ordersList">
+        <td style="width:15%" scope="col">{{order.order_id}}</td>
+        <td style="width:15%" scope="col">{{order.pass_phone}}</td>
+        <td style="width:15%" scope="col">{{order.driver_phone}}</td>
+        <td style="width:15%" scope="col">{{order.rating}}</td>
+        <td style="width:15%" scope="col" (click)="deleteOrder(order)"><button class="btn btn-danger">close </button></td>
+        <td style="width:15%" [routerLink]="['/myorder', order.order_id]"><button class="btn btn-success">Show Details</button></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
